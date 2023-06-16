@@ -1,0 +1,15 @@
+
+nav{
+  background-image: linear-gradient(to bottom right, #c28888, #ebc2c2);
+}
+body {
+  background-image: linear-gradient(to bottom right, #ecebde, #ebc2c2);
+  background-attachment: fixed;
+  padding-top: 65px;
+
+  & .card{
+    border: none;
+  }
+
+}
+
