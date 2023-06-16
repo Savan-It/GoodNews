@@ -1,4 +1,14 @@
-# Getting Started with Create React App
+# GoodNews React App
+
+![image](https://github.com/Savan-It/GoodNews/assets/69593978/1d02f2af-1047-46ac-9a1a-496903aef940)
+
+## Dark mode
+![image](https://github.com/Savan-It/GoodNews/assets/69593978/67564293-43a5-4cf8-8694-f9e5a9edf46e)
+
+## Top-loading bar
+![Screenshot (184)](https://github.com/Savan-It/GoodNews/assets/69593978/5d2f936e-995f-48bc-a798-26591fb1a227)
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
