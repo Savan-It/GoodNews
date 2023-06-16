@@ -9,10 +9,11 @@
 ![Screenshot (184)](https://github.com/Savan-It/GoodNews/assets/69593978/5d2f936e-995f-48bc-a798-26591fb1a227)
 
 ## Key Features
+* Live News
 * Top-Laading Bar
-* infinite-scroll
-* Dynamic responsive
-* dark mode
+* Infinite-scroll
+* Responsive
+* Dark mode
 * Multiple news categories 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
