@@ -6,7 +6,8 @@
 ![image](https://github.com/Savan-It/GoodNews/assets/69593978/67564293-43a5-4cf8-8694-f9e5a9edf46e)
 
 ## Top-loading bar
-![Screenshot (184)](https://github.com/Savan-It/GoodNews/assets/69593978/5d2f936e-995f-48bc-a798-26591fb1a227)
+![Uploading Screenshot (185).png…]()
+
 
 ## Key Features
 * Live News
