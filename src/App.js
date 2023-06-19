@@ -1,23 +1,16 @@
-
 import './App.scss';
-
 import React, { useState } from 'react'
 import Navbar from './Components/Navbar';
 import News from './Components/News';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
 
 
 const App = () => {
-
+  const pageSize = 9;
   const [mode, setMode] = useState('light');
   const [progress, setProgress] = useState(0);
   const [apiKey, setApiKey] = useState(process.env.REACT_APP_NEWS_API);
- 
 
   const setprogress = (progress) => {
     setProgress(progress)
@@ -35,7 +28,6 @@ const App = () => {
       setMode('light');
     }
   }
-  let pageSize = 9;
     return (
       <>
         <Router>

@@ -13,7 +13,6 @@ const News = (props) => {
     const [page, setPage] = useState(1)
     const [totalResults, setTotalResults] = useState(0)
 
-    document.title = `${capitioliseFirstLetter(props.category)} | GoodNews`;
 
 
 
@@ -35,11 +34,12 @@ const News = (props) => {
     }
 
     useEffect(() => {
+        document.title = `GoodNews | ${capitioliseFirstLetter(props.category)}`;
         updatePgae();
     }, [])
 
-    
-   const fetchMoreData = async () => {
+
+    const fetchMoreData = async () => {
         const nextPage = page + 1;
         let url = `https://newsapi.org/v2/top-headlines?country=in&category=${props.category}&apiKey=${props.apiKey}&page=${nextPage}&pageSize=${props.pageSize}`;
         let data = await fetch(url);
@@ -60,30 +60,30 @@ const News = (props) => {
     //     await updatePgae();
 
     // }
-        return (
-            <>
-                <h2 className='text-center'>GoodNews - Top {capitioliseFirstLetter(props.category)} Headlines</h2>
-                {loading && <Loading mode={props.mode} />}
-                <InfiniteScroll
-                    dataLength={articles.length}
-                    next={fetchMoreData}
-                    hasMore={articles.length !== totalResults}
-                    loader={<Loading mode={props.mode} />}
-                >
-                    <div className="container">
-                        <div className='row'>
-                            {articles?.map((element, index) => {
-                                if (element.description && element.title) {
-                                    return <div className='col-lg-4 col-sm-6 my-3' key={index}>
-                                        <NewsItem mode={props.mode} title={element.title} description={element.description} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} />
-                                    </div>
-                                }
-                            })}
-                        </div>
+    return (
+        <>
+            <h2 className='text-center'>GoodNews - Top {capitioliseFirstLetter(props.category)} Headlines</h2>
+            {loading && <Loading mode={props.mode} />}
+            <InfiniteScroll
+                dataLength={articles.length}
+                next={fetchMoreData}
+                hasMore={articles.length !== totalResults}
+                loader={<Loading mode={props.mode} />}
+            >
+                <div className="container">
+                    <div className='row'>
+                        {articles?.map((element, index) => {
+                            if (element.description && element.title) {
+                                return <div className='col-lg-4 col-sm-6 my-3' key={index}>
+                                    <NewsItem mode={props.mode} title={element.title} description={element.description} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} />
+                                </div>
+                            }
+                        })}
                     </div>
-                </InfiniteScroll>
-            </>
-        )
+                </div>
+            </InfiniteScroll>
+        </>
+    )
 }
 
 export default News
