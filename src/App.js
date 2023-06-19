@@ -1,7 +1,7 @@
 
 import './App.scss';
 
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import Navbar from './Components/Navbar';
 import News from './Components/News';
 import {
@@ -12,56 +12,52 @@ import {
 import LoadingBar from 'react-top-loading-bar'
 
 
-export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      mode: 'light',
-      progress: 0,
-      apiKey: process.env.REACT_APP_NEWS_API
-    }
+const App = () => {
+
+  const [mode, setMode] = useState('light');
+  const [progress, setProgress] = useState(0);
+  const [apiKey, setApiKey] = useState(process.env.REACT_APP_NEWS_API);
+ 
+
+  const setprogress = (progress) => {
+    setProgress(progress)
   }
 
-  setProgress = (progress) => {
-    this.setState({ progress: progress })
-  }
-
-  toggleMode = () => {
-    if (this.state.mode === 'light') {
+  const toggleMode = () => {
+    if (mode === 'light') {
       document.body.style.backgroundImage = "linear-gradient(to bottom right, #111827, #111827)";
       document.body.style.color = "white";
-      this.setState({ mode: 'dark' });
+      setMode('dark');
     }
     else {
       document.body.style.backgroundImage = "linear-gradient(to bottom right, #ecebde, #ebc2c2)";
       document.body.style.color = "black";
-      this.setState({ mode: 'light' });
+      setMode('light');
     }
   }
-  pageSize = 9;
-  render() {
+  let pageSize = 9;
     return (
       <>
         <Router>
-          <Navbar mode={this.state.mode} toggleMode={this.toggleMode} />
+          <Navbar mode={mode} toggleMode={toggleMode} />
           <LoadingBar
             color='#f11946'
             shadow={true}
-            progress={this.state.progress}
+            progress={progress}
           />
           <Routes>
-            <Route path="/" element={<News setProgress={this.setProgress} apiKey={this.state.apiKey} key="home" pageSize={this.pageSize} category="general" mode={this.state.mode} />} />
-            <Route path="/business" element={<News setProgress={this.setProgress} apiKey={this.state.apiKey} key="business" pageSize={this.pageSize} category="business" mode={this.state.mode} />} />
-            <Route path="/entertainment" element={<News setProgress={this.setProgress} apiKey={this.state.apiKey} key="entertainment" pageSize={this.pageSize} category="entertainment" mode={this.state.mode} />} />
-            <Route path="/health" element={<News setProgress={this.setProgress} apiKey={this.state.apiKey} key="health" pageSize={this.pageSize} category="health" mode={this.state.mode} />} />
-            <Route path="/science" element={<News setProgress={this.setProgress} apiKey={this.state.apiKey} key="science" pageSize={this.pageSize} category="science" mode={this.state.mode} />} />
-            <Route path="/sports" element={<News setProgress={this.setProgress} apiKey={this.state.apiKey} key="sports" pageSize={this.pageSize} category="sports" mode={this.state.mode} />} />
-            <Route path="/technology" element={<News setProgress={this.setProgress} apiKey={this.state.apiKey} key="technology" pageSize={this.pageSize} category="technology" mode={this.state.mode} />} />
+            <Route path="/" element={<News setProgress={setprogress} apiKey={apiKey} key="home" pageSize={pageSize} category="general" mode={mode} />} />
+            <Route path="/business" element={<News setProgress={setprogress} apiKey={apiKey} key="business" pageSize={pageSize} category="business" mode={mode} />} />
+            <Route path="/entertainment" element={<News setProgress={setprogress} apiKey={apiKey} key="entertainment" pageSize={pageSize} category="entertainment" mode={mode} />} />
+            <Route path="/health" element={<News setProgress={setprogress} apiKey={apiKey} key="health" pageSize={pageSize} category="health" mode={mode} />} />
+            <Route path="/science" element={<News setProgress={setprogress} apiKey={apiKey} key="science" pageSize={pageSize} category="science" mode={mode} />} />
+            <Route path="/sports" element={<News setProgress={setprogress} apiKey={apiKey} key="sports" pageSize={pageSize} category="sports" mode={mode} />} />
+            <Route path="/technology" element={<News setProgress={setprogress} apiKey={apiKey} key="technology" pageSize={pageSize} category="technology" mode={mode} />} />
           </Routes>
         </Router>
 
       </>
     )
-  }
 }
 
+export default App;
