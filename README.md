@@ -1,12 +1,6 @@
 # GoodNews React App
 
-![image](https://github.com/Savan-It/GoodNews/assets/69593978/1d02f2af-1047-46ac-9a1a-496903aef940)
-
-## Dark mode
-![image](https://github.com/Savan-It/GoodNews/assets/69593978/67564293-43a5-4cf8-8694-f9e5a9edf46e)
-
-## Top-loading bar
-![Screenshot (192)](https://github.com/Savan-It/GoodNews/assets/69593978/5f2600d5-1cff-4398-9620-ae20e045a977)
+![screen-capture (1)](https://github.com/Savan-It/GoodNews/assets/69593978/2d491813-c2cb-4d4e-9f1f-736127bca4a3)
 
 ## Key Features
 * Live News
