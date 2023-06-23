@@ -1,6 +1,6 @@
 # GoodNews React App
 
-![screen-capture (1)](https://github.com/Savan-It/GoodNews/assets/69593978/2d491813-c2cb-4d4e-9f1f-736127bca4a3)
+![GoodNews](https://github.com/Savan-It/GoodNews/assets/69593978/3945c02b-036d-419c-b422-90b16306fc69)
 
 ## Key Features
 * Live News
